@@ -33,12 +33,7 @@ namespace Homework_2
         {
             Console.WriteLine($"Фамилия:{surname},Имя:{name},Идентификатор:{ident},Дата рождения:{dateofB},Категория:{category}, Объем выпитого алкоголя:{alcohol}");
         }
-
-
-
     }
-
-
     struct user
     {
         public string name;
@@ -84,6 +79,19 @@ namespace Homework_2
             Console.ReadKey();
 
             Console.WriteLine("Задание 2");
+            Console.WriteLine($"Byte-Максимальное значение: {byte.MaxValue} - Минимальное значение: {byte.MinValue}");
+            Console.WriteLine($"Sbyte-Максимальное значение: {sbyte.MaxValue} - Минимальное значение: {sbyte.MinValue}");
+            Console.WriteLine($"Short-Максимальное значение: {short.MaxValue} - Минимальное значение: {short.MinValue}");
+            Console.WriteLine($"Ushort-Максимальное значение: {ushort.MaxValue} - Минимальное значение: {ushort.MinValue}");
+            Console.WriteLine($"Int-Максимальное значение: {int.MaxValue} - Минимальное значение: {int.MinValue}");
+            Console.WriteLine($"Uint-Максимальное значение: {uint.MaxValue} - Минимальное значение: {uint.MinValue}");
+            Console.WriteLine($"Long-Максимальное значение: {long.MaxValue} - Минимальное значение: {long.MinValue}");
+            Console.WriteLine($"Ulong-Максимальное значение: {ulong.MaxValue} - Минимальное значение: {ulong.MinValue}");
+            Console.WriteLine($"Float-Максимальное значение: {float.MaxValue} - Минимальное значение: {float.MinValue}");
+            Console.WriteLine($"Double-Максимальное значение: {double.MaxValue} - Минимальное значение: {double.MinValue}");
+            Console.WriteLine($"Decimal-Максимальное значение: {decimal.MaxValue} - Минимальное значение: {decimal.MinValue}");
+
+            Console.WriteLine("Задание 3");
             user New_U = new user();
             Console.Write("Введите имя пользователя: ");
             New_U.name = Console.ReadLine();
@@ -115,6 +123,36 @@ namespace Homework_2
 
 
             Console.WriteLine("Задание 6");
+            Console.Write("Введите скорость таракана в км/ч: ");
+            int S = int.Parse(Console.ReadLine());
+            double s = S * 100000 / 3600;
+            Console.WriteLine($"Его скорость : {Math.Floor(s)} см/с");
+            Console.ReadKey();
+
+            Console.WriteLine("Задание 7");
+            Console.Write("Напишите что-нибудь: ");
+            string str1 = Console.ReadLine();
+            StringBuilder str2 = new StringBuilder();
+            foreach (Char x in str1.ToCharArray())
+            {
+                if (Char.IsLower(x))
+                {
+                    str2.Append(Char.ToUpper(x));
+                }
+                else
+                {
+                    str2.Append(Char.ToLower(x));
+                }
+            }
+            Console.WriteLine(str2);
+           
+
+
+
+
+
+
+
         }
     }
 }
