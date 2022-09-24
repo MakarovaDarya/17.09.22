@@ -10,7 +10,7 @@ namespace Homework_2
 {
     struct Student
     {
-        public string surname;
+        public string surname; //конструктор с 6 параметрами
         public string name;
         public int ident;
         public string dateofB;
@@ -31,7 +31,7 @@ namespace Homework_2
         }
         public void Print()
         {
-            Console.WriteLine($"Фамилия:{surname},Имя:{name},Идентификатор:{ident},Дата рождения:{dateofB},Категория:{category}, Объем выпитого алкоголя:{alcohol}");
+            Console.WriteLine($"Фамилия:{surname}, Имя:{name}, Идентификатор:{ident}, Дата рождения:{dateofB}, Категория:{category}, Объем выпитого алкоголя:{alcohol}");
         }
     }
     struct user
@@ -52,7 +52,36 @@ namespace Homework_2
             Console.WriteLine($"Имя:{name},Город:{city},Возраст:{age},Пин-код:{PIN}");
 
         }
-
+    }
+    struct Tarakan
+    {
+        public double speed;
+        public Tarakan(double speed)
+        {
+            this.speed = speed;
+        }
+        public double Speed()
+        {
+            return Math.Floor(speed * 100000 / 3600);
+        }
+        public void Print()
+        {
+            Console.WriteLine($"Скорость в км/ч: {speed}");
+        }
+    }
+    struct ini
+    {
+        public string Surname;
+        public string Name;
+        public ini(string Surname, string Name)
+        {
+            this.Surname = Surname;
+            this.Name = Name;
+        }
+        public void Print()
+        {
+            Console.WriteLine($"Вваши инициалы: {Surname[0]}.{Name[0]}");
+        }
     }
     internal class Program
     {
@@ -105,15 +134,18 @@ namespace Homework_2
             Console.ReadKey();
 
             Console.WriteLine("Задание 4");
+            ini INI = new ini();
+            Console.Write("Введите фамилию: ");
+            INI.Surname = Console.ReadLine();
             Console.Write("Введите имя: ");
-            string[] name = Console.ReadLine().Split(' ');
-
-
+            INI.Name = Console.ReadLine();
+            INI.Print();
+            Console.ReadKey();
 
             Console.WriteLine("Задание 5");
             Console.Write("Сколько стоит ваш опуск? ");
             int holidayPrice = int.Parse(Console.ReadLine());
-            Console.Write("Сколько стоит утылка виски? ");
+            Console.Write("Сколько стоит бутылка виски? ");
             int normPrice = int.Parse(Console.ReadLine());
             Console.Write("Какая скидка в DutyFree? ");
             int salePrice = int.Parse(Console.ReadLine());
@@ -124,9 +156,11 @@ namespace Homework_2
 
             Console.WriteLine("Задание 6");
             Console.Write("Введите скорость таракана в км/ч: ");
-            int S = int.Parse(Console.ReadLine());
-            double s = S * 100000 / 3600;
-            Console.WriteLine($"Его скорость : {Math.Floor(s)} см/с");
+            double sec = double.Parse(Console.ReadLine());
+            Tarakan tarakan = new Tarakan(sec);
+            double S_m_s = tarakan.Speed();
+            tarakan.Print();
+            Console.WriteLine($"Скорость в м/сек: {S_m_s}");
             Console.ReadKey();
 
             Console.WriteLine("Задание 7");
@@ -156,3 +190,4 @@ namespace Homework_2
         }
     }
 }
+
